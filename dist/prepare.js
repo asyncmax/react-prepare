@@ -145,8 +145,11 @@ function prepareElement(element, context) {
   }
   var type = element.type,
       props = element.props;
+  // React.Fragment can be either a symbol or number based on the existence of
+  // ES2015 Symbol support of the current runtime environment. An equality
+  // comparison works for both cases.
 
-  if (typeof type === 'string') {
+  if (typeof type === 'string' || type === _react2.default.Fragment) {
     return _promise2.default.resolve([props.children, context]);
   }
   if (!(0, _isReactCompositeComponent2.default)(type)) {
