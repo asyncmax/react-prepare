@@ -20,13 +20,13 @@ const prepared = (
 
     componentDidMount() {
       if (componentDidMount) {
-        prepare(this.props, this.context);
+        prepare(this.props, this.context, this);
       }
     }
 
     componentWillReceiveProps(nextProps, nextContext) {
       if (componentWillReceiveProps) {
-        prepare(nextProps, nextContext);
+        prepare(nextProps, nextContext, this);
       }
     }
 
