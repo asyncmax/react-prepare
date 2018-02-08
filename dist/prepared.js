@@ -59,7 +59,7 @@ var prepared = function prepared(prepare) {
         key: 'componentDidMount',
         value: function componentDidMount() {
           if (_componentDidMount) {
-            prepare(this.props, this.context, this);
+            prepare(this.props, this.context);
           }
         }
 
@@ -69,7 +69,7 @@ var prepared = function prepared(prepare) {
         key: 'componentWillReceiveProps',
         value: function componentWillReceiveProps(nextProps, nextContext) {
           if (_componentWillReceiveProps) {
-            prepare(nextProps, nextContext, this);
+            prepare(nextProps, nextContext);
           }
         }
       }, {
